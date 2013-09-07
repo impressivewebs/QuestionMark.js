@@ -120,6 +120,8 @@
   line-height: 1.8;
   margin-right: 2em;
   padding: 5px 0;
+  position: relative;
+  bottom: 2px;
 }
 
 .help-key {
