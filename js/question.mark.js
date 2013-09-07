@@ -1,6 +1,6 @@
 /*
     QuestionMark.js by Louis Lazaris
-    http://www.impressivewebs.com/question-mark-js/
+    http://impressivewebs.github.io/QuestionMark.js/
     Use it for whatever you want, no credit needed.
     This script should work everywhere, including IE8.
     If you want IE8 support, include the following 
