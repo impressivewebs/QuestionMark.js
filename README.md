@@ -20,7 +20,7 @@ The content from question.mark.html (which also holds all the markup that builds
 
 The script also uses `window.onresize` to manage width/height of the modal, which can have performance issues. If you find this is slowing down your app, just comment out the part of the code that looks for the window resize. The drawback to this is that it will display at full size on a small window. Of course, if you only have a small single column of keyboard shortcuts, you won't need the `window.onresize` part, so just remove it.
 
-# Browser Support
+## Browser Support
 With a little coddling for IE6-8, this should work everywhere. If you want IE6-8 support, include attachevent.js before question.mark.js. Also, for IE6 you'll have to comment out the part of the script that makes the Ajax stuff work in IE6.
 
 # Bugs? Suggestion?
