@@ -19,8 +19,8 @@
 }
 
 .ie8 .help-underlay {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=90)"; /* for IE8 in IE7 mode */
-  filter: alpha(opacity=90); /* for IE8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=95)"; /* for IE8 in IE7 mode */
+  filter: alpha(opacity=95); /* for IE8 */
   z-index: 8888;
   height: 0;
 }

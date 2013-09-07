@@ -7,8 +7,8 @@
     polyfill for addEventListener() at the top:
     https://gist.github.com/jonathantneal/2415137
     (included in the repo as attachevent.js).
-    This probably works in IE6/7, but I haven't tested it.
-    The code is pretty messy, so feel free to fork it and clean it up.
+    This would probably work in IE6/7 if you find a
+    polyfill or alternate method for querySelector.
 */
 
 (function () {
@@ -77,8 +77,8 @@
             charCode = e.keyCode || e.which;
             charStr = String.fromCharCode(charCode);
 
-            // 63 = question mark key
-            // question mark key toggles the modal
+            // 63 = '?' key
+            // '?' key toggles the modal
             if (charCode === 63) {
                 classCol = document.getElementById('helpUnderlay').className;
                 if (classCol.indexOf('help-isVisible') === -1) {
@@ -95,7 +95,7 @@
             charCode = e.keyCode || e.which;
             charStr = String.fromCharCode(charCode);
 
-            // 27 = escape key
+            // 27 = ESC key
             if (charCode === 27) {
                 removeModal(helpUnderlay);
             }
@@ -107,7 +107,8 @@
         }, false);
 
         helpModal.addEventListener('click', function (e) {
-            e.stopPropagation(); // this prevents click on modal from removing the modal
+            // this prevents click on modal from removing the modal
+            e.stopPropagation();
         }, false);
 
         // the close button
@@ -140,7 +141,7 @@
 
     function insertHelp(respText, callback) {
         // Opera kept inserting the content multiple times
-        // so I added a check so it only inserts it once... bug??
+        // so I added a check to insert it just once... bug??
         if (!document.getElementById('helpUnderlay')) {
             document.getElementsByTagName('body')[0].innerHTML += respText;
             callback();
@@ -150,7 +151,6 @@
     function checkServerResponse(ajaxCapable) {
         if (ajaxCapable.readyState === 4) {
             if (ajaxCapable.status === 200 || ajaxCapable.status === 304) {
-                //document.getElementsByTagName('body')[0].innerHTML += ajaxCapable.responseText;
                 var respText = ajaxCapable.responseText;
                 // here's where the help modal is inserted
                 insertHelp(respText, function () {
