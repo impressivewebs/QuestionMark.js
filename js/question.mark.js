@@ -120,7 +120,7 @@
 
     function getXhrObject() {
         var xhrObject = false;
-        // Most browsers (including IE7) use the 3 lines below
+        // All browsers (except IE6) use the 3 lines below
         if (window.XMLHttpRequest) {
             xhrObject = new XMLHttpRequest();
         }
