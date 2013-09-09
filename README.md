@@ -7,7 +7,7 @@ I think every app that has keyboard shortcuts should do this. This could also be
 [View a demo here](http://www.impressivewebs.com/demo-files/question-mark-js/)
 
 # Instructions
-To make it work, it's pretty simple. Link the CSS file in the `<head>` and run the script on page load (or at the bottom). Make sure all the mandatory files are included (question.mark.html, question.mark.css, question.mark.js).
+To make it work, it's pretty simple. Link the CSS file in the `<head>` and run the script on page load (or at the bottom). Make sure all the mandatory files are included (`question.mark.html`, `question.mark.css`, and `question.mark.js`).
 
 To customize, edit the question.mark.html file to include your own keyboard shortcuts. For each `<ul>` included with a class of `help-list`, a new column will be created. If you want a single column, use a single `<ul>`. Longer columns will scroll vertically.
 
@@ -16,7 +16,7 @@ Within each `<ul>` a single key/definition combo is inside one `<li>`, within wh
 # Technical Info
 The script is about 2KB minified and gzip'd and it has no dependencies. It's also more or less responsive (doing this via JavaScript).
 
-The content from question.mark.html (which also holds all the markup that builds the modal) is loaded via Ajax and inserted into the `<body>` element of the page. The modal starts out invisible and is displayed via CSS transitions. Browsers that don't support transitions will display it instantly with no transition.
+The content from `question.mark.html` (which also holds all the markup that builds the modal) is loaded via Ajax and inserted into the `<body>` element of the page. The modal starts out invisible and is displayed via CSS transitions. Browsers that don't support transitions will display it instantly with no transition.
 
 The script also uses `window.onresize` to manage width/height of the modal, which can have performance issues. If you find this is slowing down your app, just comment out the part of the code that looks for the window resize. The drawback to this is that it will display at full size on a small window. Of course, if you only have a small single column of keyboard shortcuts, you won't need the `window.onresize` part, so just remove it.
 
