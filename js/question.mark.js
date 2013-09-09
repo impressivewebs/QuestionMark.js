@@ -20,66 +20,82 @@
         helpUnderlay.className = helpUnderlay.className.trim();
     }
 
+    function getWindowWidth() {
+        var w = window,
+            d = document,
+            e = d.documentElement,
+            g = d.getElementsByTagName('body')[0],
+            x = w.innerWidth || e.clientWidth || g.clientWidth;
+            //y = w.innerHeight || e.clientHeight || g.clientHeight;
+        return x;
+    }
+
+    function doModalSize(o) {
+        // Find out how many columns there are, create array of heights
+        o.helpColsTotal = 0;
+        for (o.i = 0; o.i < o.helpLists.length; o.i += 1) {
+            if (o.helpLists[o.i].className.indexOf('help-list') !== -1) {
+                o.helpColsTotal += 1;
+            }
+            o.helpListsHeights[o.i] = o.helpLists[o.i].offsetHeight;
+        }
+
+        // get the tallest column from the array of heights
+        o.maxHeight = Math.max.apply(Math, o.helpListsHeights);
+
+        // Quasi-responsive
+        if (getWindowWidth() <= 1180 && getWindowWidth() > 630 && o.helpColsTotal > 2) {
+            o.helpColsTotal = 2;
+            o.maxHeight = o.maxHeight * o.helpColsTotal;
+        }
+
+        if (getWindowWidth() <= 630) {
+            o.maxHeight = o.maxHeight * o.helpColsTotal;
+            o.helpColsTotal = 1;
+        }
+
+        // Change the width/height of the modal and wrapper to fit the columns
+        // Sorry for the magic numbers. Whatevs.
+        o.helpListWrap.style.offsetWidth = (o.helpList.offsetWidth * o.helpColsTotal) + 'px';
+        o.helpListWrap.style.height = o.maxHeight + 'px';
+        o.helpModal.style.width = (o.helpList.offsetWidth * o.helpColsTotal) + 60 + 'px';
+        o.helpModal.style.height = o.maxHeight + 100 + 'px';
+    }
+
+    function doWhichKey(e) {
+        e = e || window.event;
+        var charCode = e.keyCode || e.which;
+        //Line below not needed, but you can read the key with it
+        //var charStr = String.fromCharCode(charCode);
+        return charCode;
+    }
+
+    // Primary function, called in checkServerResponse()
     function doQuestionMark() {
 
         var helpUnderlay = document.getElementById('helpUnderlay'),
             helpModal = document.getElementById('helpModal'),
             helpClose = document.getElementById('helpClose'),
-            helpListWrap = document.getElementById('helpListWrap'),
-            helpList = document.querySelector('.help-list'),
-            helpLists = document.querySelectorAll('.help-list'),
-            helpColsTotal = 0,
-            helpListsHeights = [],
-            charCode, charStr, classCol, i, maxHeight;
+            timeOut = null,
+            objDoSize = {
+                i: null,
+                maxHeight: null,
+                helpListWrap: document.getElementById('helpListWrap'),
+                helpList: document.querySelector('.help-list'),
+                helpLists: document.querySelectorAll('.help-list'),
+                helpModal: helpModal,
+                helpColsTotal: null,
+                helpListsHeights: []
+            },
+            classCol;
 
-        function getWindowWidth() {
-            var w = window,
-                d = document,
-                e = d.documentElement,
-                g = d.getElementsByTagName('body')[0],
-                x = w.innerWidth || e.clientWidth || g.clientWidth;
-                //y = w.innerHeight || e.clientHeight || g.clientHeight;
-            return x;
-        }
-
-        // Find out how many columns there are, create array of heights
-        for (i = 0; i < helpLists.length; i += 1) {
-            if (helpLists[i].className.indexOf('help-list') !== -1) {
-                helpColsTotal += 1;
-            }
-            helpListsHeights[i] = helpLists[i].offsetHeight;
-        }
-
-        // get the tallest column from the array of heights
-        maxHeight = Math.max.apply(Math, helpListsHeights);
-
-        // Quasi-responsive
-        if (getWindowWidth() <= 1180 && getWindowWidth() > 630 && helpColsTotal > 2) {
-            helpColsTotal = 2;
-            maxHeight = maxHeight * helpColsTotal;
-        }
-
-        if (getWindowWidth() <= 630) {
-            maxHeight = maxHeight * helpColsTotal;
-            helpColsTotal = 1;
-        }
-
-        // Change the width/height of the modal and wrapper to fit the columns
-        // Sorry for the magic numbers. Whatevs.
-        helpListWrap.style.offsetWidth = (helpList.offsetWidth * helpColsTotal) + 'px';
-        helpListWrap.style.height = maxHeight + 'px';
-        helpModal.style.width = (helpList.offsetWidth * helpColsTotal) + 60 + 'px';
-        helpModal.style.height = maxHeight + 100 + 'px';
+        doModalSize(objDoSize);
 
         document.addEventListener('keypress', function (e) {
-            // find which key was pressed
-            e = e || window.event;
-            charCode = e.keyCode || e.which;
-            charStr = String.fromCharCode(charCode);
 
             // 63 = '?' key
             // '?' key toggles the modal
-            if (charCode === 63) {
+            if (doWhichKey(e) === 63) {
                 classCol = document.getElementById('helpUnderlay').className;
                 if (classCol.indexOf('help-isVisible') === -1) {
                     document.getElementById('helpUnderlay').className += ' help-isVisible';
@@ -90,13 +106,8 @@
         }, false);
 
         document.addEventListener('keyup', function (e) {
-            // find which key was pressed
-            e = e || window.event;
-            charCode = e.keyCode || e.which;
-            charStr = String.fromCharCode(charCode);
-
             // 27 = ESC key
-            if (charCode === 27) {
+            if (doWhichKey(e) === 27) {
                 removeModal(helpUnderlay);
             }
         }, false);
@@ -106,8 +117,8 @@
             removeModal(helpUnderlay);
         }, false);
 
+        // this prevents click on modal from removing the modal
         helpModal.addEventListener('click', function (e) {
-            // this prevents click on modal from removing the modal
             e.stopPropagation();
         }, false);
 
@@ -116,8 +127,22 @@
             removeModal(helpUnderlay);
         }, false);
 
+        // If the window is resized, the doModalSize() function is called again.
+        // If your menu includes only a single column of keyboard shortcuts,
+        // then you won't need this. Keep only if you have 2 columns or more.
+        window.onresize = function () {
+            if (timeOut !== null) {
+                clearTimeout(timeOut);
+            }
+            timeOut = setTimeout(function () {
+                doModalSize(objDoSize);
+            }, 100);
+        };
+
     }
 
+    // All the Ajax stuff is below.
+    // Probably no reason to touch this unless you can optimize it.
     function getXhrObject() {
         var xhrObject = false;
         // All browsers (except IE6) use the 3 lines below
@@ -171,23 +196,12 @@
             ajaxCapable.send(null);
         } else {
             // Browser does not support ajax
-            document.getElementsByTagName('body')[0].innerHTML += 'Your browser does not support Ajax';
+            document.getElementsByTagName('body')[0].innerHTML += 'Error: Your browser does not support Ajax';
         }
     }
 
-    // This fires all the Ajax stuff,
-    // so the content is ready to be accessed
+    // This fires all the Ajax stuff, and, in turn,
+    // the primary function for the modal.
     doAjax();
-
-    // If the window is resized, the main function runs again, to resize the content.
-    // If your menu includes only a single column of keyboard shortcuts,
-    // then you won't need this. Remove it unless you have 2 columns or more.
-    var timeOut = null;
-    window.onresize = function () {
-        if (timeOut !== null) {
-            clearTimeout(timeOut);
-        }
-        timeOut = setTimeout(doQuestionMark, 100);
-    };
 
 }());
