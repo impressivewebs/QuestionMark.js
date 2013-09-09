@@ -14,7 +14,7 @@ To customize, edit the question.mark.html file to include your own keyboard shor
 Within each `<ul>` a single key/definition combo is inside one `<li>`, within which there is more markup. Edit the text to include your own app's key combos. It should be pretty self-explanatory when you look at the example markup.
 
 # Technical Info
-The script is under 2KB minified and gzip'd and it has no dependencies. It's also more or less responsive (doing this via JavaScript).
+The script is about 2KB minified and gzip'd and it has no dependencies. It's also more or less responsive (doing this via JavaScript).
 
 The content from question.mark.html (which also holds all the markup that builds the modal) is loaded via Ajax and inserted into the `<body>` element of the page. The modal starts out invisible and is displayed via CSS transitions. Browsers that don't support transitions will display it instantly with no transition.
 
