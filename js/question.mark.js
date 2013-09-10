@@ -2,13 +2,12 @@
     QuestionMark.js by Louis Lazaris
     http://impressivewebs.github.io/QuestionMark.js/
     Use it for whatever you want, no credit needed.
-    This script should work everywhere, including IE8.
+    This script should work everywhere, including IE8+.
     If you want IE8 support, include the following 
     polyfill for addEventListener() at the top:
     https://gist.github.com/jonathantneal/2415137
     (included in the repo as attachevent.js).
-    This would probably work in IE6/7 if you find a
-    polyfill or alternate method for querySelector.
+    Doesn't work in IE6/7, but feel free to fork and fix.
 */
 
 (function () {
