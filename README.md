@@ -23,7 +23,7 @@ The content from `question.mark.html` (which also holds all the markup that buil
 The script also uses `window.onresize` to manage width/height of the modal, which can have performance issues. If you find this is slowing down your app, just comment out the part of the code that looks for the window resize. The drawback to this is that it will display at full size on a small window. Of course, if you only have a small single column of keyboard shortcuts, you won't need the `window.onresize` part, so, as mentioned above, just remove it.
 
 # Browser Support
-With a little coddling for IE6-8, this should work everywhere. If you want IE6-8 support, include attachevent.js before question.mark.js. Also, for IE6 you'll have to uncomment the part of the script that makes the Ajax stuff work in IE6. Finally, for IE6/7, you'll have to replace `querySelector` and `querySelectorAll` with equivalent methods that grab the same content.
+This should work in all the normal browsers and IE8+. No IE6/7 support. If you want 8 support, include attachevent.js before question.mark.js.
 
 # Bugs? Suggestion?
 The script is pretty new and I'm sure there will be reported issues and whatnot, so feel free to fork it and make it better. I don't know of any other scripts like this one, so you can help optimize the code and make this the go-to standard for including a shortcut key menu in web apps!
