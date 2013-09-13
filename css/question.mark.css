@@ -20,8 +20,7 @@
 .ie8 .help-underlay {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=95)"; /* for IE8 in IE7 mode */
   filter: alpha(opacity=95); /* for IE8 */
-  z-index: 8888;
-  height: 0;
+  visibility: hidden;
 }
 
 .help-modal {
@@ -90,8 +89,7 @@
 }
 
 .ie8 .help-underlay.help-isVisible {
-  visibility: visible\9;
-  height: auto;
+  visibility: visible;
 }
 
 .help-list-wrap {
