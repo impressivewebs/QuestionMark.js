@@ -25,8 +25,17 @@
             e = d.documentElement,
             g = d.getElementsByTagName('body')[0],
             x = w.innerWidth || e.clientWidth || g.clientWidth;
-            //y = w.innerHeight || e.clientHeight || g.clientHeight;
+            //var y = w.innerHeight || e.clientHeight || g.clientHeight;
         return x;
+    }
+
+    function doUnderlayHeight() {
+        var D = document;
+        return Math.max(
+            D.body.scrollHeight, D.documentElement.scrollHeight,
+            D.body.offsetHeight, D.documentElement.offsetHeight,
+            D.body.clientHeight, D.documentElement.clientHeight
+        );
     }
 
     function doModalSize(o) {
@@ -101,6 +110,8 @@
                 }
 
             }
+
+            helpUnderlay.style.height = doUnderlayHeight() + 'px';
 
         }, false);
 
