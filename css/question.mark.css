@@ -8,12 +8,12 @@
   position: absolute;
   background: #555;
   background: rgba(0,0,0,0.5);
+  visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity .2s linear;
   -moz-transition: opacity .2s linear;
   -o-transition: opacity .2s linear;
   transition: opacity .2s linear;
-  margin-left: -9999px;
   left: 0; right: 0; top: 0; bottom: 0;
 }
 
@@ -83,7 +83,7 @@
 
 .help-isVisible {
   opacity: 1;
-  margin-left: auto;
+  visibility: visible;
   height: auto;
   z-index: 8888;
 }
