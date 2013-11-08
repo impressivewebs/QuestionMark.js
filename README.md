@@ -30,3 +30,6 @@ The script is pretty new and I'm sure there will be reported issues and whatnot,
 
 # Demo Page
 For a demo of QuestionMark.js, [go here](http://www.impressivewebs.com/demo-files/question-mark-js/)
+
+# License
+I'm giving this a [CC 2.0](http://creativecommons.org/licenses/by/2.0/). You don't have to credit me for it, but you can do so if you wish.
