@@ -1,7 +1,7 @@
 /*
     QuestionMark.js by Louis Lazaris
     http://impressivewebs.github.io/QuestionMark.js/
-    Use it for whatever you want, no credit needed.
+    License: http://creativecommons.org/licenses/by/2.0/, no credit needed.
     This script should work everywhere, including IE8+.
     If you want IE8 support, include the following 
     polyfill for addEventListener() at the top:
