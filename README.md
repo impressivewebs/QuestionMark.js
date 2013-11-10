@@ -29,7 +29,7 @@ This should work in all the normal browsers and IE8+. No IE6/7 support. If you w
 The script is pretty new and I'm sure there will be reported issues and whatnot, so feel free to fork it and make it better. I don't know of any other scripts like this one, so you can help optimize the code and make this the go-to standard for including a shortcut key menu in web apps!
 
 # Demo Page
-For a demo of QuestionMark.js, [go here](http://www.impressivewebs.com/demo-files/question-mark-js/)
+For a demo of QuestionMark.js, [go here](http://www.impressivewebs.com/demo-files/question-mark-js/).
 
 # License
 I'm giving this a [CC 2.0](http://creativecommons.org/licenses/by/2.0/). You don't have to credit me for it, but you can do so if you wish.
