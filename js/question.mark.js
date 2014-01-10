@@ -201,7 +201,7 @@
             ajaxCapable.onreadystatechange = function () {
                 checkServerResponse(ajaxCapable);
             };
-            ajaxCapable.open("POST", "question.mark.html", true);
+            ajaxCapable.open("GET", "question.mark.html", true);
             ajaxCapable.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             ajaxCapable.send(null);
         } else {
