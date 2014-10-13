@@ -1,0 +1,28 @@
+{
+  "name": "questionmarkjs",
+  "version": "1.0.0",
+  "homepage": "http://impressivewebs.github.io/QuestionMark.js/",
+  "authors": [
+    "Louis Lazaris"
+  ],
+  "description": "When the user pushes the ? key, QuestionMark.js triggers a modal window that displays keyboard shortcuts for your app.",
+  "main": "js/question.mark.js",
+  "keywords": [
+    "questionmark",
+    "shortcut",
+    "keyboard",
+    "shortcuts",
+    "shortcut",
+    "keys",
+    "help",
+    "keys"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
