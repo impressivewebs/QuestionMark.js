@@ -99,7 +99,7 @@
 
         doModalSize(objDoSize);
 
-        document.addEventListener('keypress', function (e) {
+        document.addEventListener('keydown', function (e) {
 
             // 63 = '?' key
             // '?' key toggles the modal
