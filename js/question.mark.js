@@ -100,10 +100,9 @@
         doModalSize(objDoSize);
 
         document.addEventListener('keydown', function (e) {
-
-            // 63 = '?' key
+            // 191 = '?' key
             // '?' key toggles the modal
-            if (doWhichKey(e) === 63) {
+            if (doWhichKey(e) === 191) {
                 classCol = document.getElementById('helpUnderlay').className;
                 if (classCol.indexOf('help-isVisible') === -1) {
                     document.getElementById('helpUnderlay').className += ' help-isVisible';
