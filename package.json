@@ -1,0 +1,20 @@
+{
+  "name": "question-mark-js",
+  "version": "1.0.1",
+  "description": "When the user pushes the `?` key, QuestionMark.js triggers a modal window that displays keyboard shortcuts for your app &mdash; similar to what happens on Twitter, Gmail, GitHub, etc. The modal is removed when the `ESC` key is pushed or the user clicks behind the modal.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/impressivewebs/QuestionMark.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/impressivewebs/QuestionMark.js/issues"
+  },
+  "homepage": "https://github.com/impressivewebs/QuestionMark.js#readme"
+}
