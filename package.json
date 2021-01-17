@@ -11,8 +11,8 @@
     "url": "git+https://github.com/impressivewebs/QuestionMark.js.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Louis Lazaris",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/impressivewebs/QuestionMark.js/issues"
   },
