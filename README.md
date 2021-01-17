@@ -1,6 +1,6 @@
 # QuestionMark.js
 
-When the user pushes the `?` key, QuestionMark.js triggers a modal window that displays keyboard shortcuts for your app &mdash; similar to what happens on Twitter, Gmail, GitHub, etc. [Hat tip to Robert Nyman](https://plus.google.com/u/0/118100898483063383963/posts/V12mRNmsiWg). The modal is removed when the `ESC` key is pushed or the user clicks behind the modal.
+When the user pushes the `?` key, QuestionMark.js triggers a modal window that displays keyboard shortcuts for your app &mdash; similar to what happens on Twitter, Gmail, GitHub, etc. The modal is removed when the `ESC` key is pushed or the user clicks behind the modal.
 
 I think every app that has keyboard shortcuts should do this. This could also be a generic 'help' menu for the app, but that would require some tweaking to the code and the CSS. For now, this works primarily as a shortcut keys menu.
 
