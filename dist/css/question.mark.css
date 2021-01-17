@@ -1,0 +1,152 @@
+.help-underlay * {
+  box-sizing: border-box;
+}
+
+.help-underlay {
+  position: absolute;
+  background: #555;
+  background: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.help-modal {
+  position: absolute;
+  z-index: 99999;
+  left: 10%;
+  right: 10%;
+  top: 10%;
+  bottom: 20%;
+  margin: auto;
+  background: #fff;
+  color: #676767;
+  max-width: 1178px;
+  overflow: auto;
+  font-family: Arial, sans-serif;
+  border-radius: 3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: width 0.2s linear;
+}
+
+.help-modal-content {
+  padding: 0 20px;
+}
+
+.help-close {
+  position: absolute;
+  top: 0.4em;
+  right: 0.5em;
+  font-size: 1.8em;
+  cursor: pointer;
+  transition: color 0.2s linear;
+}
+
+.help-close:hover {
+  color: #000;
+}
+
+.help-modal h1 {
+  text-align: center;
+  margin: 0.5em;
+  font-size: 1.5em;
+  padding-bottom: 0.4em;
+  border-bottom: solid 2px #ccc;
+  font-weight: normal;
+}
+
+.help-modal h1 .help-key {
+  line-height: 1.5;
+  position: relative;
+  bottom: 4px;
+}
+
+.help-isVisible {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  z-index: 8888;
+}
+
+.help-list-wrap {
+  transition: width 0.2s linear;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.help-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+
+.help-key-unit {
+  line-height: 1.8;
+  margin-right: 2em;
+  padding: 5px 0;
+}
+
+.help-key {
+  position: relative;
+  bottom: 2px;
+}
+
+.help-key span {
+  font-size: 14px;
+  color: #555;
+  display: inline-block;
+  padding: 0 8px;
+  text-align: center;
+  background-color: #eee;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(#f5f5f5 0%, #eee 100%);
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 #fff, 0 1px 0 #ccc;
+}
+
+.help-key-def {
+  margin-left: 1em;
+}
+
+@media (max-width: 1460px) {
+  .help-modal {
+    left: 10%;
+    right: 10%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .help-modal {
+    left: 25%;
+    right: 25%;
+  }
+
+  .help-list {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1230px) {
+  .help-modal {
+    left: 30%;
+    right: 30%;
+  }
+  
+  .help-list {
+    width: 100%;
+  }
+}
+
+@media (max-width: 870px) {
+  .help-modal {
+    left: 10%;
+    right: 10%;
+  }
+}
