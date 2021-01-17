@@ -4,9 +4,18 @@ When the user pushes the `?` key, QuestionMark.js triggers a modal window that d
 
 I think every app that has keyboard shortcuts should do this. This could also be a generic 'help' menu for the app, but that would require some tweaking to the code and the CSS. For now, this works primarily as a shortcut keys menu.
 
-[View a demo here](https://www.impressivewebs.com/demo-files/question-mark-js/)
+## Demo Page
+For a demo of QuestionMark.js, [go here](https://www.impressivewebs.com/demo-files/question-mark-js/) or you can fiddle around with the version [on CodePen](https://codepen.io/impressivewebs/pen/eJzsw?editors=0010).
+
+
 
 ## Instructions
+To install all the files as a dependency in your `node_modules` folder:
+
+```
+npm install question-mark-js
+```
+
 To make it work, it's pretty simple. Link the CSS file in the `<head>` and run the script on page load (or at the bottom). Make sure all the mandatory files are included (`question.mark.html`, `question.mark.css`, and `question.mark.js`).
 
 To customize, edit the `question.mark.html` file to include your own keyboard shortcuts. For each `<ul>` included with a class of `help-list`, a new column will be created. If you want a single column, use a single `<ul>`. Longer columns will scroll vertically.
@@ -20,14 +29,8 @@ The script is less than 1KB minified and gzip'd and it has no dependencies.
 
 The content from `question.mark.html` (which also holds all the markup that builds the modal) is loaded via the Fetch API and inserted into the `<body>` element of the page. The modal starts out invisible and is displayed via CSS transitions.
 
-
-
-## Browser Support
 This should work in all browsers that support the Fetch API. If you want older browser support, you'll have to use version 1.0.0, which you can get in the GitHub history.
 
-
-## Demo Page
-For a demo of QuestionMark.js, [go here](https://www.impressivewebs.com/demo-files/question-mark-js/) or you can fiddle around with the version [on CodePen](https://codepen.io/impressivewebs/pen/eJzsw?editors=0010).
 
 
 ## MIT License
