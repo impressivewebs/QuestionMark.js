@@ -1,89 +1,76 @@
 <!DOCTYPE html>
-<!--[if lte IE 8]>     <html class="ie8"> <![endif]-->
-<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
-<head>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="monetization" content="$ilp.uphold.com/K2Xp98WeRgUn">
+  <title>QuestionMark.js</title>
+  <link rel="stylesheet" href="css/question.mark.css?v=1.0.5">
 
-<meta charset="UTF-8">
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-<title>QuestionMark.js</title>
-
-<link rel="stylesheet" href="css/question.mark.css?v=1.0.5">
-
-<style>
-.demo {
+  <style>
+  .demo {
     word-wrap: break-word;
     text-align: center;
     font-family: Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
-}
+  }
 
-.demo h1 {
+  .demo h1 {
     color: #aaa;
     font-size: 3em;
-}
+  }
 
-.demo p {
+  .demo p {
     font-family: Arial, sans-serif;
     max-width: 880px;
     color: #555;
     margin: 0 auto 30px auto;
     font-size: 30px;
-}
+  }
 
-.demo p:last-child {
+  .demo p:last-child {
     font-size: 20px;
-}
+  }
 
-.demo a {
+  .demo a {
     color: firebrick;
-}
+  }
 
-.demo a:hover {
+  .demo a:hover {
     color: blue;
-}
+  }
 
-.demo code {
+  .demo code {
     background: #888;
     color: white;
     padding: 3px 8px;
-}
-</style>
+  }
+  </style>
 
 </head>
-
 <body>
 
-<div class="demo">
+  <div class="demo">
+    <h1>QuestionMark.js</h1>
+    <p>A lightweight, cross-browser, modal window that displays shortcut keys for your app, <a href="https://plus.google.com/u/0/118100898483063383963/posts/V12mRNmsiWg">similar to Twitter, Gmail, GitHub, etc.</a></p>
 
-<h1>QuestionMark.js</h1>
+    <p>This is an example page.</p>
+    <p>Press the <code>?</code> key to see the modal.</p>
+    <p>More info:<br><a href="https://github.com/impressivewebs/QuestionMark.js">https://github.com/impressivewebs/QuestionMark.js</a> and <a href="http://www.impressivewebs.com/questionmark-js-shortcut-keys-displayed/">the blog post</a>.</p>
+    <p>Made by <a href="https://twitter.com/ImpressiveWebs">Louis Lazaris</a>. Use it for whatever you want.</p>
+  </div><!-- .demo -->
 
-<p>A lightweight, cross-browser, modal window that displays shortcut keys for your app, <a href="https://plus.google.com/u/0/118100898483063383963/posts/V12mRNmsiWg">similar to Twitter, Gmail, GitHub, etc.</a></p>
+  <script src="js/question.mark.js?v=1.0.4"></script>
 
-<p>This is an example page.</p>
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1965499-1']);
+    _gaq.push(['_trackPageview']);
 
-<p>Press the <code>?</code> key to see the modal.</p>
-
-<p>More info:<br><a href="http://impressivewebs.github.io/QuestionMark.js/">http://impressivewebs.github.io/QuestionMark.js/</a> and <a href="http://www.impressivewebs.com/questionmark-js-shortcut-keys-displayed/">a blog post</a>.</p>
-
-<p>© <a href="https://twitter.com/ImpressiveWebs">Louis Lazaris</a></p>
-</div><!-- .demo -->
-
-<!-- attachevent.js is for IE8 -->
-<!--[if lte IE 8]><script src="js/attachevent.js"></script><![endif]-->
-<script src="js/question.mark.js?v=1.0.3"></script>
-
-<script>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-1965499-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 </body>
 </html>
