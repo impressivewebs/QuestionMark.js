@@ -13,7 +13,7 @@ For a demo of QuestionMark.js, [go here](https://www.impressivewebs.com/demo-fil
 To install all the files as a dependency in your `node_modules` folder:
 
 ```
-npm install question-mark-js
+npm install questionmark-js
 ```
 
 To make it work, it's pretty simple. Link the CSS file in the `<head>` and run the script on page load (or at the bottom). Make sure all the mandatory files are included (`question.mark.html`, `question.mark.css`, and `question.mark.js`).
