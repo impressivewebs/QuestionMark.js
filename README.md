@@ -29,7 +29,7 @@ The script is less than 1KB minified and gzip'd and it has no dependencies.
 
 The content from `question.mark.html` (which also holds all the markup that builds the modal) is loaded via the Fetch API and inserted into the `<body>` element of the page. The modal starts out invisible and is displayed via CSS transitions.
 
-This should work in all browsers that support the Fetch API. If you want older browser support, you'll have to use version 1.0.0, which you can get in the GitHub history.
+This should work in all browsers that support the Fetch API. If you want older browser support, you'll have to use [version 1.0.0](https://github.com/impressivewebs/QuestionMark.js/tree/v1.0.0/js).
 
 
 
